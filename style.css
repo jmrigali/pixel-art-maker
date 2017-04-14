@@ -8,6 +8,24 @@ color: gray;
 text-shadow: 2px 2px orange;
 }
 
+#currentColor {
+  width:10%;
+  float:left;
+  margin:5%;
+}
+
+.current{
+  width:95%;
+  border-radius: 50%;
+  border: 0.5px solid black;
+  padding-bottom: 80%;
+  float:left;
+  box-sizing: border-box;
+}
+.background>p {
+  text-align: center;
+  padding-top: 15%;
+}
 #grid {
   width: 80%;
   margin-left: 20%;

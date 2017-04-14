@@ -1,23 +1,44 @@
 var body = document.getElementsByTagName('body')[0];
+//grabbing body from html
+
+var currentColor = document.getElementById('currentColor');
+//grabbing currentColor ID from html
 
 var grid = document.getElementById('grid');
-console.log(grid);
+//grabbing grid from html
+
+var palette = document.getElementById('palette');
+//palette access
 
 var brush = 'black';
+//global variable
 
+var current = document.createElement('div');
+current.className = 'current';
+currentColor.appendChild(current);
+
+
+//GRID !!!!!!
   for(var j = 0; j <2200 ; j++) {
+    //creating tiles for grid
     var tile = document.createElement('div');
+    //creating divs
+
     tile.className="tile";
+    //attaching
      grid.appendChild(tile);
      grid.addEventListener('click',
      function clickable(event) {
        event.target.style.backgroundColor = brush;
      });
   }
-var palette = document.getElementById('palette');
 
 
+
+//COLOR PALETTE
 function grabColor () {
+  //makes color palette
+
   var colorArr = ['black','white','beige', 'red','coral', 'orange', 'goldenrod', 'yellow', 'navy', 'cyan','blue','aquamarine','turquoise', 'olive', 'green', 'chartreuse', 'pink', 'violet','indigo', 'purple', ];
 
 
@@ -28,12 +49,12 @@ function grabColor () {
     palette.appendChild(colors);
 
     colors.addEventListener('click',
-    function (event) {
-      brush = event.target.style.backgroundColor;
+    function colorClick (event) {
+      // currentTest = event.target.style.backgroundColor;
+     brush = event.target.style.backgroundColor;
+    current.style.backgroundColor = event.target.style.backgroundColor;
     });
   }
-
 }
 
 grabColor();
-// console.log('brushoutside', brush);
